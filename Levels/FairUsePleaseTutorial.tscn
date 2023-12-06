@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/got.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/x.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/check.jpg" type="Texture" id=4]
+[ext_resource path="res://scripts/FairUsePleaseTutorial.gd" type="Script" id=5]
+
+[node name="FairUsePleaseTutorial" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="BG" parent="." instance=ExtResource( 1 )]
+position = Vector2( -40, 240 )
+
+[node name="BookSpawn" type="Position2D" parent="."]
+position = Vector2( 451, 320 )
+
+[node name="guidelines" type="RichTextLabel" parent="."]
+margin_left = 680.0
+margin_top = 8.0
+margin_right = 1016.0
+margin_bottom = 312.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Fair Use Guidelines:
+
+1. Educational Use:
+   - Using copyrighted material for educational purposes, such as teaching, research, and scholarship, is generally considered fair use.
+
+2. Commentary and Criticism:
+   - Providing commentary, criticism, or parody of copyrighted works is often protected under fair use.
+
+3. Transformative Use:
+   - Transforming the original work into something new, such as creating a remix or mashup, may qualify as fair use.
+
+4. Non-Commercial Use:
+   - Using copyrighted material for non-commercial purposes is more likely to be considered fair use.
+
+5. Nature of the Copyrighted Work:
+   - Fair use is more likely if the work used is factual or non-fictional rather than highly creative or fictional.
+
+Remember, fair use is a complex legal doctrine, and these guidelines are meant for general understanding rather than legal advice. Always consider seeking legal advice for specific situations.
+"
+
+[node name="ButtonScaleYes" type="Node2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Yes" type="TextureButton" parent="ButtonScaleYes"]
+margin_left = 480.0
+margin_top = 4080.0
+margin_right = 1504.0
+margin_bottom = 5104.0
+texture_normal = ExtResource( 4 )
+
+[node name="ButtonScaleNo" type="Node2D" parent="."]
+scale = Vector2( 0.1, 0.1 )
+
+[node name="No" type="TextureButton" parent="ButtonScaleNo"]
+margin_left = 8160.0
+margin_top = 4080.0
+margin_right = 9184.0
+margin_bottom = 5104.0
+texture_normal = ExtResource( 3 )
+
+[node name="Description" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 232.0
+margin_bottom = 120.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You will be given a book from that is in Internet Archive's National Emergency Library."
+
+[node name="Description4" type="RichTextLabel" parent="."]
+margin_left = 464.0
+margin_top = 24.0
+margin_right = 672.0
+margin_bottom = 120.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Use the guidelines given here to judge wether a game should or should'nt be archived"
+
+[node name="Description2" type="RichTextLabel" parent="."]
+margin_left = 16.0
+margin_top = 352.0
+margin_right = 224.0
+margin_bottom = 408.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click the checkmark if you think it is legally permissible to archive the book"
+
+[node name="Description3" type="RichTextLabel" parent="."]
+margin_left = 768.0
+margin_top = 352.0
+margin_right = 976.0
+margin_bottom = 408.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Click the X if you think it is NOT legally permissible to archive the book"
+
+[node name="Got" type="Sprite" parent="."]
+position = Vector2( 451, 320 )
+texture = ExtResource( 2 )
+
+[node name="Ready" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 152.0
+margin_bottom = 208.0
+text = "Ready"
+
+[connection signal="pressed" from="Ready" to="." method="_on_Ready_pressed"]

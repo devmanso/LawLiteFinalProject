@@ -1,0 +1,175 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/FairUsePleaseEND.gd" type="Script" id=2]
+[ext_resource path="res://Assets/catcher_rye.jpg" type="Texture" id=3]
+[ext_resource path="res://Assets/char_web.jpg" type="Texture" id=4]
+[ext_resource path="res://Assets/ail.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/got.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/thegreatgatsby.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/frank.jpg" type="Texture" id=8]
+[ext_resource path="res://Assets/IA.png" type="Texture" id=9]
+[ext_resource path="res://Assets/harpercollins.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/penguin_random_house.png" type="Texture" id=11]
+[ext_resource path="res://Assets/vs.jpg" type="Texture" id=12]
+[ext_resource path="res://Assets/johnwiley.jpg" type="Texture" id=13]
+[ext_resource path="res://Assets/southnycourt.png" type="Texture" id=14]
+[ext_resource path="res://Assets/handingovermoney.jpg" type="Texture" id=15]
+[ext_resource path="res://Assets/hachette.jpg" type="Texture" id=16]
+[ext_resource path="res://Assets/digitalarchive.jpg" type="Texture" id=17]
+[ext_resource path="res://Assets/bannedbook.webp" type="Texture" id=18]
+
+[node name="FairUsePleaseEND" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BG" parent="." instance=ExtResource( 1 )]
+
+[node name="IALogo" type="Node2D" parent="."]
+
+[node name="Johnwiley" type="Sprite" parent="IALogo"]
+position = Vector2( 304, 408 )
+scale = Vector2( 0.605556, 0.622222 )
+texture = ExtResource( 13 )
+
+[node name="Vs" type="Sprite" parent="IALogo"]
+position = Vector2( 216, 288 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="Ia" type="Sprite" parent="IALogo"]
+position = Vector2( 216, 200 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="Harpercollins" type="Sprite" parent="IALogo"]
+position = Vector2( 88, 408 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="PenguinRandomHouse" type="Sprite" parent="IALogo"]
+position = Vector2( 200, 512 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Hachette" type="Sprite" parent="IALogo"]
+position = Vector2( 200, 408 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="EndTextPosition" type="Node2D" parent="."]
+position = Vector2( 32, 56 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="EndText" type="RichTextLabel" parent="EndTextPosition"]
+margin_right = 440.0
+margin_bottom = 104.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "You made X incorrect and Y correct guesses. All these books were digitally scanned and archived by the Internet Archive (IA)."
+
+[node name="Next" type="Button" parent="."]
+margin_left = 192.0
+margin_top = 128.0
+margin_right = 236.0
+margin_bottom = 148.0
+text = "NEXT"
+
+[node name="BooksInNEL" type="Node2D" parent="."]
+
+[node name="Ail" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 592, 104 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="CatcherRye" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 744, 104 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="CharWeb" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 744, 296 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Frank" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 912, 296 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Got" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 912, 104 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Thegreatgatsby" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 592, 296 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="Court" type="Node2D" parent="."]
+
+[node name="Hachette2" type="Sprite" parent="Court"]
+position = Vector2( 168, 232 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="Johnwiley2" type="Sprite" parent="Court"]
+position = Vector2( 296, 80 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="Ia2" type="Sprite" parent="Court"]
+position = Vector2( 752, 96 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="Southnycourt" type="Sprite" parent="Court"]
+position = Vector2( 496, 288 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 14 )
+
+[node name="Handingovermoney" type="Sprite" parent="Court"]
+position = Vector2( 496, 104 )
+scale = Vector2( 0.125, 0.125 )
+texture = ExtResource( 15 )
+
+[node name="Harpercollins2" type="Sprite" parent="Court"]
+position = Vector2( 168, 104 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="PenguinRandomHouse2" type="Sprite" parent="Court"]
+position = Vector2( 296, 232 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Impacts" type="Node2D" parent="."]
+
+[node name="Bannedbook" type="Sprite" parent="Impacts"]
+position = Vector2( 736, 160 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 18 )
+
+[node name="Digitalarchive" type="Sprite" parent="Impacts"]
+position = Vector2( 728, 432 )
+texture = ExtResource( 17 )
+
+[node name="EndText2" type="RichTextLabel" parent="Impacts"]
+margin_left = 32.0
+margin_top = 56.0
+margin_right = 472.0
+margin_bottom = 360.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "But what were the impacts of the ruling on this case?
+
+1. Restriction On Access
+Those who don't live near a library or live in a poor country that don't have adequeate education systems, will lose access to books they cannot read otherwise
+
+2. Internet Archive's compensation
+As per the courts decision, Internet Archive must compensate the book publishers for every copy they sold of copyrighted material. However, this doesn't just affect IA, this affects many popular web services like Wikipedia.
+
+3. Harder to preserve literature
+Other organizations like Wikimedia foundation (Wikipedia) may be hesitant to archive literature due to legal risks. In negotiations with publishers or legal compliance efforts, there may be pressure to conform to a certain standard, leading to self-censorship."
+
+[connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]

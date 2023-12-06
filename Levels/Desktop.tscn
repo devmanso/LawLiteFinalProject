@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Desktop.gd" type="Script" id=1]
+[ext_resource path="res://Assets/scanning_books.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/copland_draft2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Solid_black.png" type="Texture" id=4]
+[ext_resource path="res://Assets/piracy.jpg" type="Texture" id=5]
+
+[node name="Desktop" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="SolidBlack" type="Sprite" parent="."]
+position = Vector2( 512, 568 )
+scale = Vector2( 0.853333, 0.0533333 )
+texture = ExtResource( 4 )
+
+[node name="Apps" type="Node2D" parent="."]
+
+[node name="VHSVault" type="TextureButton" parent="Apps"]
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 88.0
+margin_bottom = 96.0
+rect_scale = Vector2( 0.063, 0.063 )
+texture_normal = ExtResource( 5 )
+
+[node name="FairUsePlease" type="TextureButton" parent="Apps"]
+margin_left = 24.0
+margin_top = 136.0
+margin_right = 1048.0
+margin_bottom = 1160.0
+rect_scale = Vector2( 0.063, 0.063 )
+texture_normal = ExtResource( 2 )
+
+[node name="PiracyPursuitLabel" type="RichTextLabel" parent="Apps"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 120.0
+margin_bottom = 136.0
+text = "Piracy Pursuit"
+
+[node name="FairUsePleaseLabel" type="RichTextLabel" parent="Apps"]
+margin_left = 16.0
+margin_top = 216.0
+margin_right = 120.0
+margin_bottom = 256.0
+text = "Fair Use, Please
+"
+
+[node name="Time" type="RichTextLabel" parent="."]
+margin_left = 912.0
+margin_top = 576.0
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "time"
+
+[node name="OSMenu" type="RichTextLabel" parent="."]
+margin_left = 72.0
+margin_top = 576.0
+margin_right = 184.0
+margin_bottom = 632.0
+text = "CoplandOS"
+
+[node name="CoplandLogo" type="Sprite" parent="."]
+position = Vector2( 40, 568 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="DebugMem" type="RichTextLabel" parent="."]
+margin_left = 216.0
+margin_top = 544.0
+margin_right = 264.0
+margin_bottom = 584.0
+
+[connection signal="pressed" from="Apps/VHSVault" to="." method="_on_VHSVault_pressed"]
+[connection signal="pressed" from="Apps/FairUsePlease" to="." method="_on_FairUsePlease_pressed"]
