@@ -1,5 +1,7 @@
 extends Area2D
 
+onready var sprite = $TangledTape
+
 export var move_speed : float = 250.0
 
 var rng = RandomNumberGenerator.new()

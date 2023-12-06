@@ -31,4 +31,4 @@ texture = ExtResource( 1 )
 position = Vector2( 144, 448 )
 
 [node name="ObstacleSpawner" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1096, 320 )
+position = Vector2( 1072, 444 )
