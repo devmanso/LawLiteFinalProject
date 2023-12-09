@@ -16,4 +16,6 @@ func _physics_process(delta):
 
 func _on_TangledTape_body_entered(body):
 	if body.name == "Runner":
+		get_parent().clear()
+		# get parent node, and call .clear() on it
 		body.kill()
