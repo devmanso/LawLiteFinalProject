@@ -10,6 +10,22 @@ export var duck_speed = 600
 # Variables
 var velocity = Vector2()  # Player's velocity
 var current_time
+var deaths : int #TODO: read a "deaths.txt" file and check what number is stored,
+# and store the appropriate number of deaths inside the var
+
+func _ready():
+	# check if a "deaths.txt" file exists, if it doesn't, create it
+	# and initialize the newly created file with a 0.
+	var file = File.new()
+	if not file.file_exists("user://deaths.txt"):
+		file.open("user://deaths.txt", File.WRITE)
+		file.store_line("0")
+		file.close()
+	
+	# read file and init deaths
+	file.open("user://deaths.txt", File.READ)
+	deaths = int(file.get_line())
+	file.close()
 
 func _process(delta):
 	# Check for input and perform actions
@@ -56,5 +72,16 @@ func apply_gravity():
 		velocity.y += gravity * get_process_delta_time()
 
 func kill():
+	deaths +=1
+	# TODO:
+	# write new number to the deaths.txt file
+	var file = File.new()
+	file.open("user://deaths.txt", File.WRITE)
+	file.store_line(str(deaths))
+	file.close()
 	get_tree().change_scene("res://Levels/Desktop.tscn")
 
+
+
+func _on_ObstacleChecker_body_entered(body):
+	pass # Replace with function body.

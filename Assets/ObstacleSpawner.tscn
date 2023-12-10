@@ -13,4 +13,9 @@ texture = ExtResource( 1 )
 wait_time = 2.0
 autostart = true
 
+[node name="LegalDocTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="LegalDocTimer" to="." method="_on_LegalDocTimer_timeout"]

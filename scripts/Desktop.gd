@@ -29,4 +29,4 @@ func _on_FairUsePlease_pressed():
 
 
 func _on_VHSVault_pressed():
-	get_tree().change_scene("res://Levels/VHSVaultEndless.tscn")
+	get_tree().change_scene("res://Levels/VHSVaultMain.tscn")

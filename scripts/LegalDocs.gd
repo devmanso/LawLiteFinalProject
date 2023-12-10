@@ -14,9 +14,6 @@ func _physics_process(delta):
 	#move_speed = rng.randf_range(100, 200)
 	position.x -= move_speed * delta
 
-func _on_TangledTape_body_entered(body):
-	if body.name == "Runner":
-		# get the node this scene is in and call clear on it
-		var current_scene = get_tree().current_scene
-		body.kill()
-		current_scene.clear()
+func _on_LegalDocs_body_entered(body):
+	Engine.time_scale -= .5
+	queue_free()
