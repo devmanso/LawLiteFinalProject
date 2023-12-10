@@ -104,7 +104,7 @@ margin_top = 384.0
 margin_right = 264.0
 margin_bottom = 416.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "Survive for 30 seconds"
+text = "Collect 10 legal documents to unlock"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Unlockables"]
 margin_left = 16.0
@@ -125,3 +125,7 @@ scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 3 )
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Unlockables/Defense" to="." method="_on_Defense_pressed"]
+[connection signal="pressed" from="Unlockables/Context" to="." method="_on_Context_pressed"]
+[connection signal="pressed" from="Unlockables/Decision" to="." method="_on_Decision_pressed"]
+[connection signal="pressed" from="Unlockables/Impact" to="." method="_on_Impact_pressed"]

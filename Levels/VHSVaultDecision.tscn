@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Decision.gd" type="Script" id=2]
+
+[node name="VHSVaultDecision" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BG" parent="." instance=ExtResource( 1 )]
+
+[node name="Decision" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 8.0
+margin_right = 216.0
+margin_bottom = 48.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Supreme Court's decision"
+
+[node name="Explanation" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 608.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "The Supreme Court of the United States narrowly voted 5-4, ruling in favor of Sony. The majority opinion, written by Justice John Paul Stevens, held that the sale and production of the Betamax (along with other VCR's) didn't constitute contributory copyright infringement because the device had useful, non-infringing purposes. 
+
+\"The crux of our decision is that time-shifting for private home use of copyrighted material broadcast over the public airwaves is a noncommercial, nonprofit activity that does not constitute copyright infringement. We are mindful of the limited scope of our decision. Our holding is based on the peculiar characteristics of the Betamax and the limited manner in which it is capable of being used for any significant noninfringing purpose. 
+
+...
+
+Our holding today is a limited one, designed to apply only to the circumstances described above. We take no position on whether \"time-shifting\" might be a fair use under 107 of the Copyright Act. The judgment of the Court of Appeals is reversed, and the case is remanded for further proceedings consistent with this opinion.\"
+
+The Court established the \"substantial non-infringing use\" doctrine, stating that manufacturers could not be held liable for contributory infringement if their technology was capable of significant legal uses, even if some users engaged in copyright infringement.
+
+However, this would be challenged again in MGM Studios v. Grokster Ltd., A file-sharing company decided in 2005
+
+"
+
+[node name="Done" type="Button" parent="."]
+margin_left = 472.0
+margin_top = 64.0
+margin_right = 568.0
+margin_bottom = 128.0
+text = "Done"
+
+[connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

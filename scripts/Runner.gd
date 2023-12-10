@@ -10,22 +10,33 @@ export var duck_speed = 600
 # Variables
 var velocity = Vector2()  # Player's velocity
 var current_time
-var deaths : int #TODO: read a "deaths.txt" file and check what number is stored,
-# and store the appropriate number of deaths inside the var
+var deaths : int
+var docs_collected : int
 
 func _ready():
 	# check if a "deaths.txt" file exists, if it doesn't, create it
 	# and initialize the newly created file with a 0.
-	var file = File.new()
-	if not file.file_exists("user://deaths.txt"):
-		file.open("user://deaths.txt", File.WRITE)
-		file.store_line("0")
-		file.close()
+	var death_file = File.new()
+	if not death_file.file_exists("user://deaths.txt"):
+		death_file.open("user://deaths.txt", File.WRITE)
+		death_file.store_line("0")
+		death_file.close()
 	
 	# read file and init deaths
-	file.open("user://deaths.txt", File.READ)
-	deaths = int(file.get_line())
-	file.close()
+	death_file.open("user://deaths.txt", File.READ)
+	deaths = int(death_file.get_line())
+	death_file.close()
+	
+	var docsfile = File.new()
+	if not docsfile.file_exists("user://docscollected.txt"):
+		docsfile.open("user://docscollected.txt", File.WRITE)
+		docsfile.store_line("0")
+		docsfile.close()
+	
+	docsfile.open("user://docscollected.txt", File.READ)
+	docs_collected = int(docsfile.get_line())
+	docsfile.close()
+
 
 func _process(delta):
 	# Check for input and perform actions
@@ -73,15 +84,16 @@ func apply_gravity():
 
 func kill():
 	deaths +=1
-	# TODO:
-	# write new number to the deaths.txt file
 	var file = File.new()
 	file.open("user://deaths.txt", File.WRITE)
 	file.store_line(str(deaths))
 	file.close()
-	get_tree().change_scene("res://Levels/Desktop.tscn")
+	get_tree().change_scene("res://Levels/EndlessDeath.tscn")
 
-
-
-func _on_ObstacleChecker_body_entered(body):
-	pass # Replace with function body.
+func legaldoc_collected():
+	
+	docs_collected +=1
+	var file = File.new()
+	file.open("user://docscollected.txt", File.WRITE)
+	file.store_line(str(deaths))
+	file.close()
