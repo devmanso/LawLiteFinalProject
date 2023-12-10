@@ -30,3 +30,7 @@ func _on_FairUsePlease_pressed():
 
 func _on_VHSVault_pressed():
 	get_tree().change_scene("res://Levels/VHSVaultMain.tscn")
+
+
+func _on_PiracyPursuit_pressed():
+	pass # Replace with function body.
