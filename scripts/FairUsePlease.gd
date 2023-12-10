@@ -56,7 +56,25 @@ func generateBook():
 			description = "In the Roaring Twenties, Jay Gatsby's extravagant parties mask a tale of unrequited love and societal disillusionment."
 			new_book.cover.texture = load("res://Assets/thegreatgatsby.jpg")
 		4:
-			pass
+			title = "The picture of Dorian Gray"
+			author = "Oscar Wilde"
+			publisher = "Public Domain"
+			description = "A corrupt young man somehow keeps his youthful beauty eternally, but a special painting gradually reveals his inner ugliness to all."
+			new_book.cover.texture = load("res://Assets/dorian_gray.jpg")
+		5:
+			title = "1984"
+			author = "George Orwell"
+			publisher = "Public Domain"
+			description = "dystopian social science fiction novel"
+			new_book.cover.texture = load("res://Assets/go_1984.jpg")
+		6:
+			title = "A Brave New world"
+			author = "Aldous Huxley"
+			publisher = "idk"
+			description = "Huxley's 'Brave New World' explores a future of conformity, technology, and moral questions, offering a cautionary tale on societal control."
+			new_book.cover.texture = load("res://Assets/bnw.jpg")
+			new_book.scale = Vector2(.70, .70)
+
 
 # spawns a book with appropriate scaling
 func spawnBook(title : String, author : String):
@@ -104,7 +122,7 @@ func _process(delta):
 	
 	#print(currentChoice)
 	
-	if bookCounter == 4:
+	if bookCounter == 7:
 		get_tree().change_scene("res://Levels/FairUsePleaseEND.tscn")
 
 func handleChoices(counter: int):
@@ -128,10 +146,27 @@ func handleChoices(counter: int):
 				incorrectChoices += 1
 		4:
 			if isCorrect:
-				correctChoices += 1
-			else:
 				incorrectChoices += 1
-
+			else:
+				correctChoices += 1
+		5:
+			if isCorrect:
+				incorrectChoices +=1
+			else:
+				correctChoices +=1
+		6:
+			# 1984
+			if isCorrect:
+				correctChoices +=1
+			else:
+				incorrectChoices +=1
+		7:
+			# Brave new world
+			if isCorrect:
+				correctChoices +=1
+			else:
+				incorrectChoices +=1
+		
 
 
 # this is awful code

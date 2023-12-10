@@ -57,16 +57,16 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 16 )
 
 [node name="EndTextPosition" type="Node2D" parent="."]
-position = Vector2( 32, 56 )
+position = Vector2( 368, 720 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="EndText" type="RichTextLabel" parent="EndTextPosition"]
 margin_right = 440.0
-margin_bottom = 104.0
+margin_bottom = 424.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "You made X incorrect and Y correct guesses. All these books were digitally scanned and archived by the Internet Archive (IA)."
+text = "Now that you have completed the game, let's explore the case."
 
 [node name="Next" type="Button" parent="."]
 margin_left = 192.0

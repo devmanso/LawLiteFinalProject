@@ -34,6 +34,15 @@ var username : String
 onready var button_position : Vector2 = Vector2(textPosition.position.x, textPosition.position.y+100)
 onready var button_position_end : Vector2 = Vector2(impacts.position.x, impacts.position.y +100)
 
+var text1 = """
+Founded in 1996 by Brewster Khale, the Internet Archive (often called IA for short),
+is a non-profit digital archive and library that aims to provide 
+"Universal acces to all knowledge" by perserving digital content and making it freely
+avaiable to anyone with an internet connection. The IA perserves all things digital,
+such as books, movies, TV shows, videos, games and software, literature, making it
+a comprehensive resource for researchers, scholars, or just the general public.
+"""
+
 func _process(delta):
 	button_position = Vector2(textPosition.position.x, textPosition.position.y+100)
 	match textCounter:
@@ -47,7 +56,7 @@ func _process(delta):
 			textPosition.position = Vector2(32, 56)
 			textPosition.scale = Vector2(1, 1)
 			next.set_position(button_position)
-			txt.text = "Founded in 1996, the Internet Archive is a non-profit digital library that seeks to provide 'Universal Access to All Knowledge.' During March 14, 2020, to June 16, 2020, IA established the National Emergency Library (NEL), a temporary collection supporting remote teaching, research, and intellectual stimulation during the COVID-19 closures of educational institutions."
+			txt.text = text1
 		2:
 			booksInNEL.hide()
 			IAlogo.show()
