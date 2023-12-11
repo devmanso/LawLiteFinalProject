@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/tangled_tape.jpg" type="Texture" id=2]
 [ext_resource path="res://Assets/legal_document.jpg" type="Texture" id=3]
 [ext_resource path="res://scripts/VHSVaultMain.gd" type="Script" id=4]
+[ext_resource path="res://Assets/wall_grey.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/arial.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
 
 [node name="VHSVaultMain" type="Node2D"]
 script = ExtResource( 4 )
@@ -11,21 +19,22 @@ script = ExtResource( 4 )
 [node name="BG" parent="." instance=ExtResource( 1 )]
 
 [node name="Play" type="Button" parent="."]
-margin_left = 736.0
-margin_top = 136.0
-margin_right = 816.0
-margin_bottom = 172.0
+margin_left = 696.0
+margin_top = 104.0
+margin_right = 880.0
+margin_bottom = 192.0
 text = "Play"
 
 [node name="Explanation" type="RichTextLabel" parent="."]
 margin_left = 24.0
-margin_top = 16.0
-margin_right = 320.0
-margin_bottom = 288.0
+margin_top = 8.0
+margin_right = 400.0
+margin_bottom = 320.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
 text = "This dynamic mini-game within this series of exploring landmark cases in digital piracy.
 
-This endless runner encapsulates the essence of the Betamax lawsuit, a pivotal moment in copyright history.
+This endless runner encapsulates the essence of the Betamax lawsuit, a pivotal moment in copyright history: Sony Entertainment vs Universal Studios, otherwise known as the Betamax case.
 
 This game represents the legal hurdles and evidence that shows the clash between Sony and Universal Studios.
 
@@ -50,68 +59,72 @@ Collect legal documents
 
 
 
-and avoid tangled magnetic tape, walls and"
+and avoid tangled magnetic tape and walls"
 
 [node name="Unlockables" type="Node2D" parent="."]
 
 [node name="Defense" type="Button" parent="Unlockables"]
-margin_left = 272.0
-margin_top = 272.0
-margin_right = 563.0
-margin_bottom = 308.0
+margin_left = 360.0
+margin_top = 320.0
+margin_right = 651.0
+margin_bottom = 356.0
 text = "Sony's defence/Universal Studio's argument"
 
 [node name="Context" type="Button" parent="Unlockables"]
-margin_left = 272.0
-margin_top = 328.0
-margin_right = 398.0
-margin_bottom = 364.0
+margin_left = 360.0
+margin_top = 376.0
+margin_right = 486.0
+margin_bottom = 412.0
 text = "Historical Context"
 
 [node name="Decision" type="Button" parent="Unlockables"]
-margin_left = 272.0
-margin_top = 384.0
-margin_right = 439.0
-margin_bottom = 420.0
+margin_left = 360.0
+margin_top = 432.0
+margin_right = 527.0
+margin_bottom = 468.0
 text = "Supreme Court Decision"
 
 [node name="Impact" type="Button" parent="Unlockables"]
-margin_left = 272.0
-margin_top = 440.0
-margin_right = 439.0
-margin_bottom = 476.0
+margin_left = 360.0
+margin_top = 488.0
+margin_right = 527.0
+margin_bottom = 524.0
 text = "Legacy and Impact"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Unlockables"]
-margin_left = 16.0
-margin_top = 288.0
-margin_right = 264.0
-margin_bottom = 320.0
+margin_left = 24.0
+margin_top = 336.0
+margin_right = 312.0
+margin_bottom = 368.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Collect 5 legal documents to unlock"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Unlockables"]
-margin_left = 16.0
-margin_top = 336.0
-margin_right = 264.0
-margin_bottom = 368.0
+margin_left = 24.0
+margin_top = 384.0
+margin_right = 272.0
+margin_bottom = 416.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Die 5 times to unlock"
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Unlockables"]
-margin_left = 16.0
-margin_top = 384.0
-margin_right = 264.0
-margin_bottom = 416.0
+margin_left = 24.0
+margin_top = 432.0
+margin_right = 312.0
+margin_bottom = 464.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Collect 10 legal documents to unlock"
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Unlockables"]
-margin_left = 16.0
-margin_top = 448.0
-margin_right = 264.0
-margin_bottom = 480.0
+margin_left = 24.0
+margin_top = 496.0
+margin_right = 272.0
+margin_bottom = 528.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Survive for 60 seconds"
 
 [node name="TangledTape" type="Sprite" parent="."]
@@ -123,6 +136,11 @@ texture = ExtResource( 2 )
 position = Vector2( 728, 344 )
 scale = Vector2( 0.125, 0.125 )
 texture = ExtResource( 3 )
+
+[node name="WallGrey" type="Sprite" parent="."]
+position = Vector2( 872, 512 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Unlockables/Defense" to="." method="_on_Defense_pressed"]

@@ -64,13 +64,13 @@ func generateBook():
 		5:
 			title = "1984"
 			author = "George Orwell"
-			publisher = "Public Domain"
+			publisher = "Secker & Warburg 1949"
 			description = "dystopian social science fiction novel"
 			new_book.cover.texture = load("res://Assets/go_1984.jpg")
 		6:
 			title = "A Brave New world"
 			author = "Aldous Huxley"
-			publisher = "idk"
+			publisher = "Harper Collins"
 			description = "Huxley's 'Brave New World' explores a future of conformity, technology, and moral questions, offering a cautionary tale on societal control."
 			new_book.cover.texture = load("res://Assets/bnw.jpg")
 			new_book.scale = Vector2(.70, .70)
@@ -108,7 +108,7 @@ func _process(delta):
 	authorlabel.text = author
 	titlelabel.text = title
 	publisherlabel.text = publisher
-	desc.text = str(correctChoices)
+	desc.text = str(correctChoices) + " correct guesses so far"
 	#desc.text = description
 	# handle book destruction/respawn
 	if bookDestroyed:

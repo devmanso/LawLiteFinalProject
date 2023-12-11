@@ -1,3 +1,169 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Ground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/MovingPlatform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/KillBrick.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/TP.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Solid_black.png" type="Texture" id=6]
 
 [node name="PiracyPursuit" type="Node2D"]
+
+[node name="SolidBlack" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 999, 999 )
+texture = ExtResource( 6 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 152, 128 )
+
+[node name="Ground" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 224 )
+scale = Vector2( 10, 1 )
+
+[node name="Ground6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1528, -160 )
+scale = Vector2( 5, 1 )
+
+[node name="Ground14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2728, -232 )
+scale = Vector2( 5, 1 )
+
+[node name="Ground7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1936, -24 )
+rotation = 1.24267
+scale = Vector2( 5, 1 )
+
+[node name="Ground8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2152, -32 )
+rotation = 1.24267
+scale = Vector2( 5, 1 )
+
+[node name="Ground2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 736, 160 )
+
+[node name="Ground9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 40, 224 )
+
+[node name="Ground11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 104, 224 )
+
+[node name="Ground12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 168, 224 )
+
+[node name="Ground13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 232, 224 )
+
+[node name="Ground21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 296, 224 )
+
+[node name="Ground22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 360, 224 )
+
+[node name="Ground23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 424, 224 )
+
+[node name="Ground24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 488, 224 )
+
+[node name="Ground25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 544, 224 )
+
+[node name="Ground26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 224 )
+
+[node name="Ground47" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2600, -232 )
+
+[node name="Ground48" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2664, -232 )
+
+[node name="Ground49" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2720, -232 )
+
+[node name="Ground50" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2784, -232 )
+
+[node name="Ground51" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2848, -232 )
+
+[node name="Ground36" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1959, 38 )
+rotation = 1.24267
+
+[node name="Ground40" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1979, 96 )
+rotation = 1.24267
+
+[node name="Ground37" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1896, -144 )
+rotation = 1.24267
+
+[node name="Ground38" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1917, -83 )
+rotation = 1.24267
+
+[node name="Ground39" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1937, -22.9999 )
+rotation = 1.24267
+
+[node name="Ground41" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2176, 30 )
+rotation = 1.24267
+
+[node name="Ground42" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2196, 88 )
+rotation = 1.24267
+
+[node name="Ground43" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2113, -152 )
+rotation = 1.24267
+
+[node name="Ground44" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2134, -91 )
+rotation = 1.24267
+
+[node name="Ground45" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2154, -30.9999 )
+rotation = 1.24267
+
+[node name="Ground31" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1400, -160 )
+
+[node name="Ground32" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1464, -160 )
+
+[node name="Ground33" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1520, -160 )
+
+[node name="Ground34" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1584, -160 )
+
+[node name="Ground35" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1648, -160 )
+
+[node name="Ground3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 872, 176 )
+
+[node name="Ground4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 992, 104 )
+
+[node name="Ground5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1120, 32 )
+
+[node name="Ground10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2464, -160 )
+
+[node name="MovingPlatform" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1280, -32 )
+
+[node name="MovingPlatform2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2304, -160 )
+
+[node name="KillBrick" parent="." instance=ExtResource( 4 )]
+position = Vector2( 416, 592 )
+scale = Vector2( 100, 1 )
+
+[node name="TP" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2848, -304 )
+scene = "Levels/GroksterBackground.tscn"

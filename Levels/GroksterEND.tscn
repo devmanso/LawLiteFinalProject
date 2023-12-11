@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/GroksterEND.gd" type="Script" id=1]
+[ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/P2P_network.svg" type="Texture" id=4]
+
+[node name="GroksterEND" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="BG" parent="." instance=ExtResource( 2 )]
+
+[node name="Background" type="RichTextLabel" parent="."]
+margin_left = 24.0
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 600.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "4. Inducement Standard reinterpreted
+- The court reinterpreted the inducement standard, stating that a defandent could be held liable if it intentionally encouraged copyright infringement, directly or indirectly. This is irrespective of whether the technology had substantial non-infringing uses.
+
+5. Impact on Innovation and technology on software development
+- The decision had a massive impact on the development and distribution of P2P software, even other applications that relied on the technology, but weren't P2P software itself, were also heavily impacted.
+- Many P2P services shutdown or changed their operations to avoid legal consequences. Some services were shutdown, but were kept alive by being released as an open-source software. (The code that made up the software became available to anyone, for free)
+
+6. Ongoing legal significance
+- The Grokster case set a precedent that continues to influence legal discourse around liability and copyright, and the responsibilities of the developer/company making it."
+
+[node name="P2pNetwork" type="Sprite" parent="."]
+position = Vector2( 592, 136 )
+scale = Vector2( 0.204, 0.233639 )
+texture = ExtResource( 4 )
+
+[node name="Done" type="Button" parent="."]
+margin_left = 480.0
+margin_top = 424.0
+margin_right = 568.0
+margin_bottom = 464.0
+text = "Done"
+
+[connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

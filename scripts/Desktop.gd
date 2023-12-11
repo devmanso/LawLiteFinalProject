@@ -33,4 +33,4 @@ func _on_VHSVault_pressed():
 
 
 func _on_PiracyPursuit_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene("res://Levels/PiracyPursuit.tscn")
