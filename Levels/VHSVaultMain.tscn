@@ -21,7 +21,7 @@ script = ExtResource( 4 )
 [node name="Play" type="Button" parent="."]
 margin_left = 696.0
 margin_top = 104.0
-margin_right = 880.0
+margin_right = 912.0
 margin_bottom = 192.0
 text = "Play"
 
@@ -142,8 +142,16 @@ position = Vector2( 872, 512 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
+[node name="GoBack" type="Button" parent="."]
+margin_left = 432.0
+margin_top = 104.0
+margin_right = 640.0
+margin_bottom = 188.0
+text = "Done"
+
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Unlockables/Defense" to="." method="_on_Defense_pressed"]
 [connection signal="pressed" from="Unlockables/Context" to="." method="_on_Context_pressed"]
 [connection signal="pressed" from="Unlockables/Decision" to="." method="_on_Decision_pressed"]
 [connection signal="pressed" from="Unlockables/Impact" to="." method="_on_Impact_pressed"]
+[connection signal="pressed" from="GoBack" to="." method="_on_GoBack_pressed"]

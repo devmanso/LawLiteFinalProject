@@ -42,3 +42,7 @@ func _on_Decision_pressed():
 
 func _on_Impact_pressed():
 	get_tree().change_scene("res://Levels/VHSVaultImpact.tscn")
+
+
+func _on_GoBack_pressed():
+	get_tree().change_scene("res://Levels/Desktop.tscn")

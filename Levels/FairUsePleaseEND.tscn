@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/FairUsePleaseEND.gd" type="Script" id=2]
@@ -24,6 +24,13 @@
 [ext_resource path="res://Assets/udall.jpg" type="Texture" id=22]
 [ext_resource path="res://Assets/NEL.png" type="Texture" id=23]
 [ext_resource path="res://Fonts/arial.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Assets/Brewster_Kahle.jpg" type="Texture" id=25]
+[ext_resource path="res://aud/FUP_1.wav" type="AudioStream" id=26]
+[ext_resource path="res://aud/FUP2.wav" type="AudioStream" id=27]
+[ext_resource path="res://aud/FUP3.wav" type="AudioStream" id=28]
+[ext_resource path="res://aud/FUP4.wav" type="AudioStream" id=29]
+[ext_resource path="res://aud/FUP5.wav" type="AudioStream" id=30]
+[ext_resource path="res://aud/FUP6.wav" type="AudioStream" id=31]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 24 )
@@ -57,12 +64,12 @@ scale = Vector2( 0.605556, 0.622222 )
 texture = ExtResource( 13 )
 
 [node name="Vs" type="Sprite" parent="IALogo"]
-position = Vector2( 216, 288 )
+position = Vector2( 456, 496 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 12 )
 
 [node name="Ia" type="Sprite" parent="IALogo"]
-position = Vector2( 216, 200 )
+position = Vector2( 664, 512 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 
@@ -102,6 +109,11 @@ margin_bottom = 148.0
 text = "NEXT"
 
 [node name="BooksInNEL" type="Node2D" parent="."]
+position = Vector2( 54, 0 )
+
+[node name="Ia" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 560, 520 )
+texture = ExtResource( 9 )
 
 [node name="Ail" type="Sprite" parent="BooksInNEL"]
 position = Vector2( 592, 104 )
@@ -132,6 +144,11 @@ texture = ExtResource( 6 )
 position = Vector2( 592, 296 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
+
+[node name="BrewsterKahle" type="Sprite" parent="BooksInNEL"]
+position = Vector2( 232, 456 )
+scale = Vector2( 0.3125, 0.267699 )
+texture = ExtResource( 25 )
 
 [node name="Court" type="Node2D" parent="."]
 
@@ -246,6 +263,24 @@ margin_top = 640.0
 margin_right = 104.0
 margin_bottom = 696.0
 text = "Done"
+
+[node name="FUP1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+
+[node name="FUP2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+
+[node name="FUP3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+
+[node name="FUP4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+
+[node name="FUP5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+
+[node name="FUP6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
 
 [connection signal="pressed" from="Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/BG.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Universal_logo.png" type="Texture" id=2]
 [ext_resource path="res://Assets/betamax_tape.jpg" type="Texture" id=3]
 [ext_resource path="res://Assets/Sony_logo.png" type="Texture" id=4]
 [ext_resource path="res://scripts/VHSVaultContext.gd" type="Script" id=5]
+[ext_resource path="res://aud/betamax3.wav" type="AudioStream" id=6]
 
 [node name="VHSVaultContext" type="Node2D"]
 script = ExtResource( 5 )
@@ -62,5 +63,9 @@ margin_top = 464.0
 margin_right = 888.0
 margin_bottom = 516.0
 text = "Done"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
 
 [connection signal="pressed" from="Done" to="." method="_on_Done_pressed"]

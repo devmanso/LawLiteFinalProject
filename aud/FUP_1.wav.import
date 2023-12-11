@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FUP_1.wav-ff2ea0bf9e3d6dcb9af0f7f01791d6cd.sample"
+
+[deps]
+
+source_file="res://aud/FUP_1.wav"
+dest_files=[ "res://.import/FUP_1.wav-ff2ea0bf9e3d6dcb9af0f7f01791d6cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

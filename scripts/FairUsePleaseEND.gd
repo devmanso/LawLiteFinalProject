@@ -17,6 +17,9 @@ onready var nel = $Nel
 onready var southnycourt = $NYCourt
 onready var money = $money
 onready var done = $Done
+onready var fup1 = $FUP1
+onready var fup2 = $FUP2
+onready var fup3 = $FUP3
 
 var textCounter : int = 0
 
@@ -52,14 +55,14 @@ a comprehensive resource for researchers, scholars, or just the general public.
 """
 
 var text2 = """
-The Internet Archive also hosts a free digital library, calle the Open Library,
-the archive boasts more than 1.4 million books, both public domain, and licensed,
+The Internet Archive also hosts a free digital library, called the Open Library,
+the archive boasts more than 1.4 million books, both public domain, and copyrighted,
 popular or obscure.
 
 IA does this through a model called Controlled-Digital-Learning (CDL).
 CDL is a digital library lending practice, that mimics the lending practices of
-physical libraries, while adiding by copyright law*. Physical boks are digitally
-scanned into digital copies, which lended based on the number of physical copies
+physical libraries, while adiding by copyright law*. Physical books are digitally
+scanned into digital copies (eBooks), which are lended based on the number of physical copies
 the library owns. So if a library owns 10 physical copies of a book, they can lend
 out 10 digital copies. These digital copies come with DRM software (Digital Rights
 Management) to prevent illegal copies, and limit content only on the loan period.
@@ -76,7 +79,7 @@ To address our unprecedented global and immediate need for access to reading and
 """
 
 var text4 = """
-The NEL was met with acclaim from the public, universities and libraries viewed it
+The NEL was met with acclaim from the general public. Universities and libraries viewed it
 as an indespensible service, especially during the COVID-19 lockdown. However, it
 was despised by authors and their publishers. The Author's Guild stated:
 "IA has no rights whatsoever to these books, much less to give them away indiscriminitly,
@@ -113,30 +116,37 @@ func _process(delta):
 			textPosition.position = Vector2(1024/2 - 320, 600/2-100)
 			textPosition.scale = Vector2(1.5, 1.5)
 			next.set_position(button_position)
+			fup1.play()
 		1:
 			booksInNEL.show()
-			textPosition.position = Vector2(32, 56)
+			textPosition.position = Vector2(10, 56)
 			textPosition.scale = Vector2(1, 1)
-			next.set_position(Vector2(button_position.x, button_position.y+100))
+			next.set_position(Vector2(button_position.x, button_position.y+120))
 			txt.text = text1
+			fup2.play()
 		2:
 			booksInNEL.hide()
 			#IAlogo.show()
 			cdl.show()
 			cdl.position = Vector2(100, 50)
 			textPosition.position = Vector2(480, 56)
-			next.set_position(Vector2(button_position.x, button_position.y+220))
+			next.set_position(Vector2(button_position.x, button_position.y+250))
 			txt.text = text2
+			fup1.stop()
+			fup3.play()
 		3:
+			fup2.stop()
 			IAlogo.hide()
 			cdl.position = Vector2(590,70)
 			booksInNEL.hide()
 			#court.show()
 			nel.show()
-			textPosition.position = Vector2(80, 330)
-			next.set_position(Vector2(button_position.x, button_position.y + 95))
+			textPosition.position = Vector2(80, 250)
+			next.set_position(Vector2(button_position.x- 50, button_position.y + 95))
 			txt.text = text3
+			$FUP4.play()
 		4:
+			fup3.stop()
 			nel.hide()
 			court.hide()
 			cdl.hide()
@@ -146,7 +156,9 @@ func _process(delta):
 			senators.show()
 			#impacts.show()
 			next.set_position(button_position)
+			$FUP5.play()
 		5:
+			$FUP4.stop()
 			IAlogo.show()
 			senators.hide()
 			textPosition.position = Vector2(60, 5)
@@ -156,6 +168,8 @@ func _process(delta):
 			next.set_position(Vector2(700, 100))
 		6:
 			impacts.show()
+			$FUP5.stop()
+			$FUP6.play()
 			southnycourt.hide()
 			money.hide()
 			txt.text = ""

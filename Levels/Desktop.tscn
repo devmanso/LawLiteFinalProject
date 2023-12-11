@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Desktop.gd" type="Script" id=1]
 [ext_resource path="res://Assets/scanning_books.jpg" type="Texture" id=2]
@@ -7,6 +7,13 @@
 [ext_resource path="res://Assets/piracy.jpg" type="Texture" id=5]
 [ext_resource path="res://Assets/white.png" type="Texture" id=6]
 [ext_resource path="res://Assets/wall_grok.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/arial.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 8 )
 
 [node name="Desktop" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,57 +31,82 @@ texture = ExtResource( 6 )
 [node name="Apps" type="Node2D" parent="."]
 
 [node name="VHSVault" type="TextureButton" parent="Apps"]
-margin_left = 232.0
+margin_left = 448.0
 margin_top = 152.0
-margin_right = 1256.0
+margin_right = 1472.0
 margin_bottom = 1176.0
 rect_scale = Vector2( 0.125, 0.125 )
 texture_normal = ExtResource( 5 )
 
+[node name="VHSVault2" type="TextureButton" parent="Apps"]
+margin_left = 304.0
+margin_top = 528.0
+margin_right = 1328.0
+margin_bottom = 1552.0
+rect_scale = Vector2( 0.063, 0.063 )
+texture_normal = ExtResource( 5 )
+
 [node name="FairUsePlease" type="TextureButton" parent="Apps"]
-margin_left = 432.0
+margin_left = 744.0
 margin_top = 168.0
-margin_right = 1456.0
+margin_right = 1768.0
 margin_bottom = 1192.0
 rect_scale = Vector2( 0.125, 0.125 )
 texture_normal = ExtResource( 2 )
 
+[node name="FairUsePlease2" type="TextureButton" parent="Apps"]
+margin_left = 400.0
+margin_top = 528.0
+margin_right = 1424.0
+margin_bottom = 1552.0
+rect_scale = Vector2( 0.063, 0.063 )
+texture_normal = ExtResource( 2 )
+
 [node name="PiracyPursuitLabel" type="RichTextLabel" parent="Apps"]
-margin_left = 40.0
-margin_top = 312.0
-margin_right = 144.0
-margin_bottom = 352.0
+margin_left = 168.0
+margin_top = 320.0
+margin_right = 272.0
+margin_bottom = 360.0
 text = "Piracy Pursuit"
 
 [node name="FairUsePleaseLabel" type="RichTextLabel" parent="Apps"]
-margin_left = 448.0
-margin_top = 312.0
-margin_right = 552.0
-margin_bottom = 352.0
+margin_left = 760.0
+margin_top = 320.0
+margin_right = 864.0
+margin_bottom = 360.0
 text = "Fair Use, Please
 "
 
 [node name="Betamax Run" type="RichTextLabel" parent="Apps"]
-margin_left = 248.0
+margin_left = 456.0
 margin_top = 296.0
-margin_right = 352.0
+margin_right = 560.0
 margin_bottom = 336.0
 text = "Betamax Run
 "
 
 [node name="PiracyPursuit" type="TextureButton" parent="Apps"]
-margin_left = 32.0
+margin_left = 160.0
 margin_top = 176.0
-margin_right = 160.0
+margin_right = 288.0
 margin_bottom = 304.0
+texture_normal = ExtResource( 7 )
+
+[node name="PiracyPursuit2" type="TextureButton" parent="Apps"]
+margin_left = 208.0
+margin_top = 528.0
+margin_right = 336.0
+margin_bottom = 656.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 7 )
 
 [node name="Time" type="RichTextLabel" parent="."]
 margin_left = 912.0
-margin_top = 576.0
+margin_top = 560.0
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 1 )
 text = "time"
 
 [node name="OSMenu" type="RichTextLabel" parent="."]
@@ -83,6 +115,7 @@ margin_top = 576.0
 margin_right = 184.0
 margin_bottom = 632.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "CoplandOS"
 
 [node name="CoplandLogo" type="Sprite" parent="."]
@@ -97,5 +130,8 @@ margin_right = 264.0
 margin_bottom = 584.0
 
 [connection signal="pressed" from="Apps/VHSVault" to="." method="_on_VHSVault_pressed"]
+[connection signal="pressed" from="Apps/VHSVault2" to="." method="_on_VHSVault_pressed"]
 [connection signal="pressed" from="Apps/FairUsePlease" to="." method="_on_FairUsePlease_pressed"]
+[connection signal="pressed" from="Apps/FairUsePlease2" to="." method="_on_FairUsePlease_pressed"]
 [connection signal="pressed" from="Apps/PiracyPursuit" to="." method="_on_PiracyPursuit_pressed"]
+[connection signal="pressed" from="Apps/PiracyPursuit2" to="." method="_on_PiracyPursuit_pressed"]
